@@ -1,0 +1,776 @@
+[
+    {
+        "id": "685d0114417b2695",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7641e1217f4d62f1",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2d044f3d338f3152",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f0fd75b2cb51835b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "52e3bffabfa7a140",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "eb7c576ac7ab0729",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "52e3bffabfa7a140",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d6e901e3e80793f4",
+        "type": "ui_group",
+        "name": "vento",
+        "tab": "52e3bffabfa7a140",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e011516c952c7023",
+        "type": "ui_group",
+        "name": "Sensacao Termica",
+        "tab": "52e3bffabfa7a140",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "eb458aa478bd4e73",
+        "type": "ui_group",
+        "name": "Humidade",
+        "tab": "52e3bffabfa7a140",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "24b33d4c062a9da5",
+        "type": "inject",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "4SIA",
+        "payloadType": "str",
+        "x": 290,
+        "y": 160,
+        "wires": [
+            [
+                "8fcff6d06f864557"
+            ]
+        ]
+    },
+    {
+        "id": "96f573e0d77660f4",
+        "type": "debug",
+        "z": "7641e1217f4d62f1",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "8fcff6d06f864557",
+        "type": "http request",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?q=Sao+Paulo&appid=9988a4a7388be8cd9197288dbf941c37",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 70,
+        "y": 340,
+        "wires": [
+            [
+                "ef3fad1994fa407e"
+            ]
+        ]
+    },
+    {
+        "id": "ef3fad1994fa407e",
+        "type": "json",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 290,
+        "y": 500,
+        "wires": [
+            [
+                "dd6084344a25bca9",
+                "c0e9896fc30355a8",
+                "7ef012b99b2a270f",
+                "959d20d7007053e3",
+                "39066cc65e7cb179",
+                "e75e46a4ea0e5d32"
+            ]
+        ]
+    },
+    {
+        "id": "3d52fbfea2550aca",
+        "type": "change",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 340,
+        "wires": [
+            [
+                "8fd90a089494832d"
+            ]
+        ]
+    },
+    {
+        "id": "8bbbcdae587a7680",
+        "type": "change",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_min",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 420,
+        "wires": [
+            [
+                "5dd03f291773216d"
+            ]
+        ]
+    },
+    {
+        "id": "681947d038fc1830",
+        "type": "change",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_max",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 500,
+        "wires": [
+            [
+                "06dccc547c294eed"
+            ]
+        ]
+    },
+    {
+        "id": "dd6084344a25bca9",
+        "type": "change",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.wind.speed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 560,
+        "wires": [
+            [
+                "f582393ef3bfc59a"
+            ]
+        ]
+    },
+    {
+        "id": "c0e9896fc30355a8",
+        "type": "change",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 640,
+        "wires": [
+            [
+                "eb3a6e4d7732fa73"
+            ]
+        ]
+    },
+    {
+        "id": "5cba8e5d8a49a6cb",
+        "type": "change",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.feels_like",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 720,
+        "wires": [
+            [
+                "4027222d01d85dbf"
+            ]
+        ]
+    },
+    {
+        "id": "4b32045783f35c43",
+        "type": "mqtt out",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "topic": "andre/fiap/teste",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "2d044f3d338f3152",
+        "x": 680,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "8fd90a089494832d",
+        "type": "ui_gauge",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "group": "eb7c576ac7ab0729",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1230,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5dd03f291773216d",
+        "type": "ui_gauge",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "group": "eb7c576ac7ab0729",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "min",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1210,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "06dccc547c294eed",
+        "type": "ui_gauge",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "group": "eb7c576ac7ab0729",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "max",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1210,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f582393ef3bfc59a",
+        "type": "ui_gauge",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "group": "d6e901e3e80793f4",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "vento",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1210,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "eb3a6e4d7732fa73",
+        "type": "ui_gauge",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "group": "eb458aa478bd4e73",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidade",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1220,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "4027222d01d85dbf",
+        "type": "ui_gauge",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "group": "e011516c952c7023",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensação Termica",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1250,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "7ef012b99b2a270f",
+        "type": "function",
+        "z": "7641e1217f4d62f1",
+        "name": "function 1",
+        "func": "var temperaturaKelvin = msg.payload.main.temp;\nvar temperaturaCelsius = (temperaturaKelvin - 273);\nmsg.payload = temperaturaCelsius.toFixed(2); // Arredondar para 2 casas decimais\n\n// Enviar a mensagem de saída\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 280,
+        "wires": [
+            [
+                "3d52fbfea2550aca"
+            ]
+        ]
+    },
+    {
+        "id": "959d20d7007053e3",
+        "type": "function",
+        "z": "7641e1217f4d62f1",
+        "name": "function 2",
+        "func": "var temperaturaKelvin = msg.payload.main.temp_min;\nvar temperaturaCelsius = (temperaturaKelvin - 273);\nmsg.payload = temperaturaCelsius.toFixed(2); // Arredondar para 2 casas decimais\n\n// Enviar a mensagem de saída\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "8bbbcdae587a7680"
+            ]
+        ]
+    },
+    {
+        "id": "39066cc65e7cb179",
+        "type": "function",
+        "z": "7641e1217f4d62f1",
+        "name": "function 3",
+        "func": "var temperaturaKelvin = msg.payload.main.temp_max;\nvar temperaturaCelsius = (temperaturaKelvin - 273);\nmsg.payload = temperaturaCelsius.toFixed(2); // Arredondar para 2 casas decimais\n\n// Enviar a mensagem de saída\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 440,
+        "wires": [
+            [
+                "681947d038fc1830"
+            ]
+        ]
+    },
+    {
+        "id": "e75e46a4ea0e5d32",
+        "type": "function",
+        "z": "7641e1217f4d62f1",
+        "name": "function 4",
+        "func": "var temperaturaKelvin = msg.payload.main.feels_like;\nvar temperaturaCelsius = (temperaturaKelvin - 273);\nmsg.payload = temperaturaCelsius.toFixed(2); // Arredondar para 2 casas decimais\n\n// Enviar a mensagem de saída\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 640,
+        "wires": [
+            [
+                "5cba8e5d8a49a6cb"
+            ]
+        ]
+    },
+    {
+        "id": "88e1c4e97d4cc06c",
+        "type": "inject",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 20,
+        "wires": [
+            [
+                "4b32045783f35c43"
+            ]
+        ]
+    },
+    {
+        "id": "22be274bd77f05fb",
+        "type": "mqtt in",
+        "z": "7641e1217f4d62f1",
+        "name": "",
+        "topic": "andre/fiap/teste",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2d044f3d338f3152",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 300,
+        "y": 80,
+        "wires": [
+            [
+                "1d36825ac11de4a3"
+            ]
+        ]
+    },
+    {
+        "id": "1d36825ac11de4a3",
+        "type": "debug",
+        "z": "7641e1217f4d62f1",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 80,
+        "wires": []
+    }
+]
